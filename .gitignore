@@ -1,0 +1,9 @@
+# ignore VSCode related folders
+**/.vscode/*
+!**/.vscode/settings.json
+!**/.vscode/tasks.json
+!**/.vscode/launch.json
+
+# ignore outputs
+**/bin
+**/obj
