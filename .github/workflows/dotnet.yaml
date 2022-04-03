@@ -1,0 +1,25 @@
+name: dotnet workflow
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet-version: ['5.0.x']
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@main
+      - name: setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: install dependencies
+        run: dotnet restore "./facebookCodingPuzzles/Level 1/Level 1.csproj"
+      - name: build
+        run: dotnet build "./facebookCodingPuzzles/Level 1/Level 1.csproj" --configuration Release --no-restore
+      - name: Test
+        run: dotnet test "./facebookCodingPuzzles/Level 1/Level 1.csproj" --no-restore --verbosity normal
