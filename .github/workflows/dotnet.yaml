@@ -18,7 +18,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: install dependencies
-        run: dotnet restore ./facebookCodingPuzzles/Level1/Level 1.csproj
+        run: dotnet restore ./facebookCodingPuzzles/Level1/Level1.csproj
       - name: build
         run: dotnet build ./facebookCodingPuzzles/Level1/Level1.csproj --configuration Release --no-restore
       - name: Test
