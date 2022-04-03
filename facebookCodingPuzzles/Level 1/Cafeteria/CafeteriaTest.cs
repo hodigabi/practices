@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Tests
+namespace Level1
 {
     public class CafeteriaTest
     {
