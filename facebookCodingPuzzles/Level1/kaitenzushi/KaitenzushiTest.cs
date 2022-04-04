@@ -46,7 +46,7 @@ namespace Practice.FacebookCodingPuzzles.Level1
             var D = new int[] {1, 2, 1, 2, 1, 2, 1};
             var K = 2;
 
-            var expected = 4;
+            var expected = 2;
 
             // Act
             var actual = Kaitenzushi.GetMaximumEatenDishCount(N, D, K);
