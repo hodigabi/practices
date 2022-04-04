@@ -1,3 +1,6 @@
+# general
+
+# .net related
 # ignore VSCode related folders
 **/.vscode
 !**/.vscode/settings.json
@@ -7,3 +10,8 @@
 # ignore outputs
 **/bin
 **/obj
+
+
+# node.js related
+/node_modules/
+package-lock.json

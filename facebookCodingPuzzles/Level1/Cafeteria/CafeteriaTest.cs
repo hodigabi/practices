@@ -1,7 +1,7 @@
-using NUnit.Framework;
-
-namespace Level1
+namespace Practice.FacebookCodingPuzzles.Level1
 {
+    using NUnit.Framework;
+
     public class CafeteriaTest
     {
         [Test]

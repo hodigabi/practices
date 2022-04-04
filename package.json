@@ -1,0 +1,23 @@
+{
+  "name": "practice",
+  "version": "0.0.1",
+  "description": "practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hodigabi/practices.git"
+  },
+  "author": "Gabor Hodi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hodigabi/practices/issues"
+  },
+  "homepage": "https://github.com/hodigabi/practices#readme",
+  "dependencies": {
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1"
+  }
+}

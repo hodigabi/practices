@@ -13,13 +13,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@main
-      - name: setup .NET Core SDK ${{ matrix.dotnet-version }}
+      - name: setup .NET SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: install dependencies
-        run: dotnet restore ./facebookCodingPuzzles/Level1/Level1.csproj
+        run: dotnet restore ./Practice.csproj
       - name: build
-        run: dotnet build ./facebookCodingPuzzles/Level1/Level1.csproj --configuration Release --no-restore
+        run: dotnet build ./Practice.csproj --configuration Release --no-restore
       - name: Test
-        run: dotnet test ./facebookCodingPuzzles/Level1/Level1.csproj --no-restore --verbosity normal
+        run: dotnet test ./Practice.csproj --no-restore --verbosity normal

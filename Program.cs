@@ -1,4 +1,4 @@
-﻿namespace Level1
+﻿namespace Practice
 {
     // this is empty
 }
