@@ -13,5 +13,5 @@
 
 
 # node.js related
+# do not ignore packa-lock.json because 'npm ci' needs it
 /node_modules/
-package-lock.json
