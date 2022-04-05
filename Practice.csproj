@@ -6,6 +6,8 @@
     <RootNamespace>Practice</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <!-- SonarCloud needs this -->
+    <ProjectGuid>{B04D546F-2FFF-4206-8502-30456173600D}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
