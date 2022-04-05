@@ -18,7 +18,7 @@ function getMaxAdditionalDinersCount(N, K, M, S) {
     S = S.sort((a,b) => a-b);
 
     // ignore the space before the first and after the last diner
-    for(let i = 1; i<=S.length-1; i++)
+    for(let i = 1; i<=M-1; i++)
     {
         // the space between two diners
         diff = S[i] - S[i-1] - 1;
