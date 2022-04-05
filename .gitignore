@@ -11,6 +11,9 @@
 **/bin
 **/obj
 
+# ignore test results
+/TestResults/
+
 
 # node.js related
 # do not ignore packa-lock.json because 'npm ci' needs it
