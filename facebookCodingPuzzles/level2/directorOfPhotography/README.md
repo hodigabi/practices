@@ -1,5 +1,5 @@
-## Cafeteria
-##### Level 1
+## Director of Photography (Chapter 2)
+##### Level 2
 ---
 
 *Note: Chapter 1 is an easier version of this puzzle. The only difference is a smaller constraint on N.*
