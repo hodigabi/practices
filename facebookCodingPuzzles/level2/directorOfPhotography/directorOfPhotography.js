@@ -70,8 +70,8 @@
         if (i-Y >= 0)
         {
             c = C[i-Y];
-            if (c == 'P') leftP--;
-            if (c == 'B') leftB--;
+            if (c === 'P') leftP--;
+            if (c === 'B') leftB--;
         }
 
         // same for the right side;
