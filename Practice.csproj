@@ -10,6 +10,7 @@
     <ProjectGuid>{B04D546F-2FFF-4206-8502-30456173600D}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AltCover" Version="8.2.837" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />

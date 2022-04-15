@@ -23,9 +23,9 @@ jobs:
       - name: Build
         run: dotnet build ./Practice.csproj --configuration Release --no-restore
       - name: Test
-        run: dotnet test ./Practice.csproj --no-restore --verbosity normal --logger:"trx;LogFilePrefix=TestResults"
+        run: dotnet test ./Practice.csproj --no-restore --verbosity normal
 
-        # this file is needed for the js file analysis
+        # this file is needed for the js file analysis but breaks the dotnet analysis :)
       - name: Remove sonar-project.properties files
         shell: powershell
         run: Remove-Item -Path .\sonar-project.properties
@@ -59,6 +59,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"hodigabi_practices" /o:"hodigabi" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"hodigabi_practices" /o:"hodigabi" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths=coverage.xml
           dotnet build ./Practice.csproj --configuration Release --no-restore
+          dotnet test ./Practice.csproj /p:AltCover=true
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
