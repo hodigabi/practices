@@ -18,6 +18,7 @@
   "homepage": "https://github.com/hodigabi/practices#readme",
   "dependencies": {
     "jest": "^27.5.1",
-    "jest-cli": "^27.5.1"
+    "jest-cli": "^27.5.1",
+    "jest-sonar-reporter": "^2.0.0"
   }
 }

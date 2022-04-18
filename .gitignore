@@ -19,3 +19,7 @@ coverage.xml
 # node.js related
 # do not ignore packa-lock.json because 'npm ci' needs it
 /node_modules/
+
+# ignore test results
+coverage/
+test-report.xml
