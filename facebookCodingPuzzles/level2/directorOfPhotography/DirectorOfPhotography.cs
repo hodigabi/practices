@@ -69,7 +69,7 @@ namespace Practice.FacebookCodingPuzzles.Level2
                     if (c == 'B') leftB--;
                 }
 
-                // same for the right side;
+                // same for the right side
                 // there is deliberately no condition here
                 c = C[i+X];
                 if (c == 'P') rightP--;

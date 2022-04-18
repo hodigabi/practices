@@ -75,5 +75,23 @@ namespace Practice.FacebookCodingPuzzles.Level2
             // A
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void TooShortInputShouldReturnZero()
+        {
+            // A
+            var N = 1;
+            var C = ".";
+            var X = 1;
+            var Y = 1;
+
+            var expected = 0;
+
+            // A
+            var result = DirectorOfPhotography.GetArtisticPhotographCount(N, C, X, Y);
+
+            // A
+            Assert.AreEqual(expected, result);
+        }
     }
 }

@@ -17,3 +17,7 @@ test("Example 3 returns 3", () => {
 test("Max range returns 1", () => {
     expect(getArtisticPhotographCount(15, "ABA..........PA", 1, 15)).toBe(1);
 })
+
+test("Too short input returns 0", () => {
+    expect(getArtisticPhotographCount(1, ".", 1, 1)).toBe(0);
+})
