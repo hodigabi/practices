@@ -13,33 +13,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
+
       - name: Setup .NET SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
-      - name: Install dependencies
-        run: dotnet restore ./Practice.csproj
-      - name: Build
-        run: dotnet build ./Practice.csproj --configuration Release --no-restore
-      - name: Test
-        run: dotnet test ./Practice.csproj --no-restore --verbosity normal
-
-        # this file is needed for the js file analysis but breaks the dotnet analysis :)
-      - name: Remove sonar-project.properties files
-        shell: powershell
-        run: Remove-Item -Path .\sonar-project.properties
-
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+
       - name: Cache SonarCloud scanner
         id: cache-sonar-scanner
         uses: actions/cache@v1
@@ -47,19 +38,33 @@ jobs:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+
+      - name: Install dependencies
+        run: dotnet restore ./PracticeTest/PracticeTest.csproj
+
+#      - name: Build
+#        run: dotnet build ./Practice.csproj --configuration Release --no-restore --no-incremental
+#      - name: Test
+#        run: dotnet test ./Practice.csproj --no-restore --verbosity normal
+
+        # this file is needed for the js file analysis but breaks the dotnet analysis :)
+      - name: Remove sonar-project.properties files
+        shell: powershell
+        run: Remove-Item -Path .\sonar-project.properties
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"hodigabi_practices" /o:"hodigabi" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths=coverage.xml
-          dotnet build ./Practice.csproj --configuration Release --no-restore
-          dotnet test ./Practice.csproj /p:AltCover=true
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"hodigabi_practices" /o:"hodigabi" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths=./practicetest/coverage.xml
+          dotnet build ./PracticeTest/PracticeTest.csproj --configuration Release --no-restore --no-incremental
+          dotnet test ./PracticeTest/PracticeTest.csproj /p:AltCover=true
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"

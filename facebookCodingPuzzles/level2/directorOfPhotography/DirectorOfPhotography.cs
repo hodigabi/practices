@@ -1,6 +1,6 @@
 namespace Practice.FacebookCodingPuzzles.Level2
 {
-    internal static class DirectorOfPhotography
+    public static class DirectorOfPhotography
     {
         public static long GetArtisticPhotographCount(int N, string C, int X, int Y)
         {

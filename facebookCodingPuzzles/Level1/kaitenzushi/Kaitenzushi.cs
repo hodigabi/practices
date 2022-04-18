@@ -1,6 +1,6 @@
 namespace Practice.FacebookCodingPuzzles.Level1
 {
-    internal static class Kaitenzushi
+    public static class Kaitenzushi
     {
         public static int GetMaximumEatenDishCount(int N, int[] D, int K)
         {

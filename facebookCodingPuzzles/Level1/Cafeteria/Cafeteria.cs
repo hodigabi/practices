@@ -1,6 +1,6 @@
 namespace Practice.FacebookCodingPuzzles.Level1
 {
-    internal static class Cafeteria {
+    public static class Cafeteria {
 
         public static long GetMaxAdditionalDinersCount(long N, long K, int M, long[] S) {
             // the space needed between two existing diner in order to be able to seat one more diner

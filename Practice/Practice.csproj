@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\facebookCodingPuzzles\level1\cafeteria\cafeteria.cs" />
+    <Compile Include="..\facebookCodingPuzzles\level1\kaitenzushi\kaitenzushi.cs" />
+    <Compile Include="..\facebookCodingPuzzles\level2\directorOfPhotography\directorOfPhotography.cs" />
+  </ItemGroup>
+</Project>
