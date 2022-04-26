@@ -7,7 +7,6 @@
  * @return {number}
  */
  function getSecondsRequired(N, F, P) {
-
     // there is only one frog
     if (F === 1) return N - P[0];
 
@@ -26,26 +25,6 @@
     result += N - P[P.length-1] - 1;
 
     return result + F;
-    /*
-    while(P.length > 1)
-    {
-        let canJump = true;
-
-        let i = 1;
-        while (canJump && i<P.length)
-        {
-            let diff = P[i] - P[i-1];
-            if (diff > 1) canJump = false; else i++;
-        }
-
-        for(let j=0; j<i; j++) {P[j]++;}
-        result++;
-
-        if(P[i-1] === N) P.pop();
-    }
-
-    return result + 1;
-*/
 }
 
 module.exports = getSecondsRequired;
