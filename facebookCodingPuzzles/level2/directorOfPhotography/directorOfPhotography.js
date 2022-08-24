@@ -43,7 +43,7 @@
         j++;
     }
 
-    for(var i=X; i+X<N; i++)
+    for (let i=X; i+X<N; i++)
     {
         // calculate 'B's and 'P's left to the current char
         c = C[i-X];
