@@ -2,5 +2,5 @@ This repository contains my solutions to different coding challenges in differen
 
 - Meta (facebook) challenges
   - [level 1](https://github.com/hodigabi/practices/tree/main/facebookCodingPuzzles/Level1)
-  - [level 2](https://github.com/hodigabi/practices/tree/main/facebookCodingPuzzles/Level2)
+  - [level 2](https://github.com/hodigabi/practices/tree/main/facebookCodingPuzzles/level2)
 - [Unknown source](https://github.com/hodigabi/practices/tree/main/codingPuzzles/splitStringBySpaces)
