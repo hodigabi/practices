@@ -5,6 +5,7 @@ on:
     paths:
       - 'Practice/**'
       - 'facebookCodingPuzzles/**/*.cs'
+      - '.github/workflows/dotnet.yml'
 
 jobs:
   build:
