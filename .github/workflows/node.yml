@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'facebookCodingPuzzles/**/*.js'
-      - 'codingPuzzles/**/*.js
+      - 'codingPuzzles/**/*.js'
       - '.github/workflows/node.yml'
 
 jobs:
