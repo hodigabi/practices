@@ -1,9 +1,14 @@
 name: node workflow
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'facebookCodingPuzzles/**/*.js'
+      - 'codingPuzzles/**/*.js
+      - '.github/workflows/node.yml'
 
 jobs:
-  build-and-test:
+  test-and-analyse:
 
     runs-on: ubuntu-latest
 

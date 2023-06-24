@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'Practice/**'
+      - 'PracticeTest/**'
       - 'facebookCodingPuzzles/**/*.cs'
       - '.github/workflows/dotnet.yml'
 
@@ -22,6 +23,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
+          distribution: 'oracle'
           java-version: 17
 
       - name: Install SonarCloud scanner
