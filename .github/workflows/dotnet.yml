@@ -27,9 +27,9 @@ jobs:
           java-version: 17
 
       - name: Install SonarCloud scanner
-        shell: powershell
+        shell: bash
         run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
+          mkdir -p .\.sonar\scanner
           dotnet tool install dotnet-sonarscanner --tool-path .\.sonar\scanner
 
       - name: Install dependencies
