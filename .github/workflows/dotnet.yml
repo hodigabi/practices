@@ -43,7 +43,7 @@ jobs:
         # this file is needed for the js file analysis but breaks the dotnet analysis :)
       - name: Remove sonar-project.properties files
         shell: bash
-        run: rm .\sonar-project.properties
+        run: rm sonar-project.properties
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
