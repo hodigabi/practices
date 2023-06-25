@@ -4,14 +4,14 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\facebookCodingPuzzles\level1\cafeteria\cafeteria.cs" />
-    <Compile Include="..\facebookCodingPuzzles\level1\kaitenzushi\kaitenzushi.cs" />
-    <Compile Include="..\facebookCodingPuzzles\level2\directorOfPhotography\directorOfPhotography.cs" />
+    <Compile Include="../facebookCodingPuzzles/level1/cafeteria/Cafeteria.cs" />
+    <Compile Include="../facebookCodingPuzzles/level1/kaitenzushi/Kaitenzushi.cs" />
+    <Compile Include="../facebookCodingPuzzles/level2/directorOfPhotography/DirectorOfPhotography.cs" />
   </ItemGroup>
 </Project>

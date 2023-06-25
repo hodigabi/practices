@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Practice\Practice.csproj" />
-    <Compile Include="..\facebookCodingPuzzles\level1\cafeteria\cafeteriaTest.cs" />
-    <Compile Include="..\facebookCodingPuzzles\level1\kaitenzushi\kaitenzushiTest.cs" />
-    <Compile Include="..\facebookCodingPuzzles\level2\directorOfPhotography\directorOfPhotographyTest.cs" />
+    <ProjectReference Include="../Practice/Practice.csproj" />
+    <Compile Include="../facebookCodingPuzzles/level1/cafeteria/CafeteriaTest.cs" />
+    <Compile Include="../facebookCodingPuzzles/level1/kaitenzushi/KaitenzushiTest.cs" />
+    <Compile Include="../facebookCodingPuzzles/level2/directorOfPhotography/DirectorOfPhotographyTest.cs" />
   </ItemGroup>
 
 </Project>

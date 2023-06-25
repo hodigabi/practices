@@ -29,23 +29,24 @@ jobs:
       - name: Install SonarCloud scanner
         shell: bash
         run: |
-          mkdir -p .\.sonar\scanner
-          dotnet tool install dotnet-sonarscanner --tool-path .\.sonar\scanner
+          mkdir -p .sonar/scanner
+          dotnet tool install dotnet-sonarscanner --tool-path .sonar/scanner
 
       - name: Install dependencies
-        run: dotnet restore ./PracticeTest/PracticeTest.csproj
+        run: dotnet restore PracticeTest/PracticeTest.csproj
 
         # this file is needed for the js file analysis but breaks the dotnet analysis :)
       - name: Remove sonar-project.properties files
         shell: bash
         run: rm sonar-project.properties
+
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          dotnet sonarscanner begin /k:"practices_dotnet" /o:"hodigabi" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths=./practicetest/coverage.xml
-          dotnet build ./PracticeTest/PracticeTest.csproj --configuration Release --no-restore --no-incremental
-          dotnet test ./PracticeTest/PracticeTest.csproj /p:AltCover=true
-          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          .sonar/scanner/dotnet-sonarscanner begin /k:"practices_dotnet" /o:"hodigabi" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths=./practicetest/coverage.xml
+          dotnet build PracticeTest/PracticeTest.csproj --configuration Release --no-restore --no-incremental
+          dotnet test PracticeTest/PracticeTest.csproj /p:AltCover=true
+          .sonar/scanner/dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
